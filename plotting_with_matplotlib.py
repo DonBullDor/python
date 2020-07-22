@@ -12,7 +12,7 @@ plt.scatter(x,y) # scatter plot
 plt.show()
 
 ########################################################################################
-# Other plot :                                                                         #
+# More plotting details                                                                      #
 ########################################################################################
 
 # generate sample data
@@ -37,3 +37,18 @@ plt.savefig('filename.png')
 #plt.close() # Close the current window to allow new plot creation on
             #separate window / axis, alternatively we can use show()
 plt.show()
+
+########################################################################################
+# The Figure is the top-level
+# container for everything on a canvas. Axes is a container class for a specific plot. A Figure
+# may contain many axes and/or subplots. Subplots are laid out in a grid within the Figure.
+# Axes can be placed anywhere on the Figure. We can use the subplots factory to get the
+# Figure and all the desired axes at once
+########################################################################################
+
+fig, ax = plt.subplots()
+fig,(ax1,ax2,ax3,ax4) = plt.subplots(nrows=4, ncols=1, sharex=True, figsize=(8,4))
+# Iterating the Axes within a Figure
+for ax in fig.get_axes():
+    pass # do something
+
